@@ -26,7 +26,7 @@ Table Example (UM 923-932)
 +--------------+-------------+---------------+----------------+--------------+
 
 ==========================================================================================
-Generic Model for Variables and Value Domains (UM 1042-1184)
+Paragraph + Diagram + List Example (UM 1042-1184)
 ==========================================================================================
 This Section provides a formal model for the Variables, the Value Domains, their Values and the possible (Sub)Sets of Values. 
 These artefacts can be referenced in the definition of the VTL Data Structures and as parameters of some VTL Operators.
