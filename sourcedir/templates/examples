@@ -1,0 +1,22 @@
+--------
+Examples
+--------
+
+.. include:: examples/intro.rst
+
+{% for ds in ds_list %}
+.. csv-table::
+   :file: examples/{{ ds }}
+   :header-rows: 2
+{% endfor %}
+
+{% for example in examples %}
+^^^^^^^^^
+Example {{ example.i }}
+^^^^^^^^^
+.. literalinclude:: examples/{{ example.vtl }}
+
+.. csv-table::
+   :file: examples/{{ example.res }}
+   :header-rows: 2
+{% endfor %}

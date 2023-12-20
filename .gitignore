@@ -1,0 +1,4 @@
+venv/*
+outputdir/*
+sourcedir/operators/**/examples.rst
+sourcedir/operators/**/index.rst
