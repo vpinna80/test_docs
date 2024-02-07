@@ -98,6 +98,22 @@ Variable and Value Domain model diagram (with PlantUML)
             RepresentedVariable "1..1" -- "0..N" DataStructureComponent
     @enduml
 
+--------------------------------------------------------
+Variable and Value Domain model diagram (with draw.io)
+--------------------------------------------------------
+
+PNG
+
+.. image:: ./VTL_1046.drawio.png
+..   :width: 400
+..   :alt: Alternative text
+
+SVG
+
+.. image:: ./VTL_1046.drawio.svg
+..   :width: 400
+..   :alt: Alternative text
+
 ------------------------------
 Explanation of the Diagram
 ------------------------------
