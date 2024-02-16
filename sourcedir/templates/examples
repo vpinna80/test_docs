@@ -5,8 +5,14 @@ Examples
 .. include:: examples/intro.rst
 
 {% for ds in ds_list %}
+
+.. collapse:: {{ ds }} structure
+
+   .. literalinclude:: examples/{{ ds }}.json
+       :language: json
+
 .. csv-table::
-   :file: examples/{{ ds }}
+   :file: examples/{{ ds }}.csv
    :header-rows: 2
 {% endfor %}
 
@@ -14,9 +20,14 @@ Examples
 ^^^^^^^^^
 Example {{ example.i }}
 ^^^^^^^^^
-.. literalinclude:: examples/{{ example.vtl }}
+.. literalinclude:: examples/{{ example }}.vtl
+
+.. collapse:: {{ example }} structure
+
+   .. literalinclude:: examples/{{ example }}.json
+       :language: json
 
 .. csv-table::
-   :file: examples/{{ example.res }}
+   :file: examples/{{ example }}.csv
    :header-rows: 2
 {% endfor %}
