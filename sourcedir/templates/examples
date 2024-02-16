@@ -6,7 +6,7 @@ Examples
 
 {% for input in inputs %}
 
-Input **{{ input.name | upper }}** (see `structure https://github.com/vpinna80/test\_docs/blob/master/sourcedir/{{ input.folder }}`_ )
+Input **{{ input.name | upper }}** (see `structure <https://github.com/vpinna80/test\_docs/blob/master/sourcedir/{{ input.folder }}>`_ )
 
 .. csv-table::
    :file: examples/{{ input.name }}.csv
@@ -19,7 +19,7 @@ Example {{ example.i }}
 ^^^^^^^^^^^^^^^^
 .. literalinclude:: examples/{{ example.name }}.vtl
 
-Result **{{ example.name | upper }}** (see `structure https://github.com/vpinna80/test\_docs/blob/master/sourcedir/{{ example.folder }}`_ )
+Result **{{ example.name | upper }}** (see `structure <https://github.com/vpinna80/test\_docs/blob/master/sourcedir/{{ example.folder }}>`_ )
 
 .. csv-table::
    :file: examples/{{ example.name }}.csv
