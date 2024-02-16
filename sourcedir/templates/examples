@@ -13,7 +13,7 @@ Input **{{ input.name | upper }}** (see `structure <{{ repourl_ex }}/{{ input.fo
    :header-rows: 1
 {% endfor %}
 
-{% for example in ex_list %}
+{% for example in examples %}
 ^^^^^^^^^^^^^^^^
 Example {{ example.i }}
 ^^^^^^^^^^^^^^^^
