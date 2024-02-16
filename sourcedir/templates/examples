@@ -4,17 +4,12 @@ Examples
 
 .. include:: examples/intro.rst
 
-{% for ds in ds_list %}
+{% for input in inputs %}
 
-.. |collapse{{ ds | name_norm }}| replace:: collapse:: structure
-   
-   .. literalinclude:: examples/{{ ds }}.json
-       :language: json
-
-Input **{{ ds | upper }}** \[ |collapse{{ ds | name_norm }}| \]
+Input **{{ input.name | upper }}** (see `structure {{ ds`_ )
 
 .. csv-table::
-   :file: examples/{{ ds }}.csv
+   :file: examples/{{ input.name }}.csv
    :header-rows: 1
 {% endfor %}
 
