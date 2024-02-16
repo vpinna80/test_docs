@@ -6,7 +6,7 @@ Examples
 
 {% for ds in ds_list %}
 
-.. collapse:: Dataset {{ ds }} structure
+.. collapse:: Dataset {{ ds|upper }} structure
 
    .. literalinclude:: examples/{{ ds }}.json
        :language: json
@@ -22,7 +22,7 @@ Example {{ example.i }}
 ^^^^^^^^^
 .. literalinclude:: examples/{{ example.name }}.vtl
 
-.. collapse:: Dataset {{ example.name }} structure
+.. collapse:: Result {{ example.name|upper }} structure
 
    .. literalinclude:: examples/{{ example.name }}.json
        :language: json
