@@ -26,12 +26,12 @@ html_context = {
     "github_user": "vpinna80",  # Username
     "github_repo": "test_docs",  # Repo name
     "github_version": "master",  # Version
-    "conf_py_path": "/sourcedir/",  # Path in the checkout to the docs root
-    'name_norm': name_norm
+    "conf_py_path": "/sourcedir/"  # Path in the checkout to the docs root
 }
 
 # Load templates
-jinjaEnv = Environment(loader=FileSystemLoader(searchpath="templates"))
+jinjaEnv = Environment(loader = FileSystemLoader(searchpath="templates"))
+jinjaEnv.filters = { 'name_norm': name_norm }
 templates = {}
 for template in next(os.walk("templates"))[2]:
     templates[template] = jinjaEnv.get_template(template)
