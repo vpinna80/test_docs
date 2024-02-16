@@ -16,18 +16,18 @@ Examples
    :header-rows: 2
 {% endfor %}
 
-{% for example in examples %}
+{% for example in ex_list %}
 ^^^^^^^^^
 Example {{ example.i }}
 ^^^^^^^^^
-.. literalinclude:: examples/{{ example }}.vtl
+.. literalinclude:: examples/{{ example.name }}.vtl
 
-.. collapse:: {{ example }} structure
+.. collapse:: Dataset {{ example.name }} structure
 
-   .. literalinclude:: examples/{{ example }}.json
+   .. literalinclude:: examples/{{ example.name }}.json
        :language: json
 
 .. csv-table::
-   :file: examples/{{ example }}.csv
+   :file: examples/{{ example.name }}.csv
    :header-rows: 2
 {% endfor %}
