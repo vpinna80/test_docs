@@ -6,7 +6,7 @@ Examples
 
 {% for ds in ds_list %}
 
-.. collapse:: {{ ds }} structure
+.. collapse:: Dataset {{ ds }} structure
 
    .. literalinclude:: examples/{{ ds }}.json
        :language: json
