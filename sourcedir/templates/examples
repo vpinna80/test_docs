@@ -6,7 +6,7 @@ Examples
 
 {% for input in inputs %}
 
-Input **{{ input.name | upper }}** (see `structure <{{ repourl_ex }}/{{ input.folder }}/{{ example.name }}.json>`_\)
+Input **{{ input.name | upper }}** (see `structure <{{ repourl_ex }}/{{ input.folder }}/{{ input.name }}.json>`_\)
 
 .. csv-table::
    :file: examples/{{ input.name }}.csv
