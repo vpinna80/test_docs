@@ -1,7 +1,10 @@
 import os
+import re
 from pathlib import Path
-
 from jinja2 import Environment, FileSystemLoader
+
+def name_norm(value):
+    return re.sub("[^a-zA-Z0-9]", "", value)
 
 html_theme = "sphinx_rtd_theme"
 extensions = [
@@ -24,7 +27,9 @@ html_context = {
     "github_repo": "test_docs",  # Repo name
     "github_version": "master",  # Version
     "conf_py_path": "/sourcedir/",  # Path in the checkout to the docs root
+    'name_norm': name_norm
 }
+
 # Load templates
 jinjaEnv = Environment(loader=FileSystemLoader(searchpath="templates"))
 templates = {}
