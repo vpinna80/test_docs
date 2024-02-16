@@ -44,7 +44,7 @@ for op_folder in next(os.walk("operators"))[1]:
     ex_list = sorted(x.with_suffix('').name for x in examples_folder.glob("ex_*.vtl"))
     examples = []
     for i in range(len(vtls)):
-        examples.append({ "i": i + 1, "ex_names": vtls[i] })
+        examples.append({ "i": i + 1, "name": ex_list[i] })
     with open(op_path.joinpath("examples.rst"), "w") as f:
         f.write(
             templates["examples"].render({"ex_list": examples, "ds_list": ds_list})
