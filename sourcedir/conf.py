@@ -43,7 +43,7 @@ for op_folder in next(os.walk("operators"))[1]:
     ds_list = sorted(x.with_suffix('').name for x in examples_folder.glob("ds_*.csv"))
     ex_list = sorted(x.with_suffix('').name for x in examples_folder.glob("ex_*.vtl"))
     examples = []
-    for i in range(len(vtls)):
+    for i in range(len(ex_list)):
         examples.append({ "i": i + 1, "name": ex_list[i] })
     with open(op_path.joinpath("examples.rst"), "w") as f:
         f.write(
