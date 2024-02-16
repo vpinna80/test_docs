@@ -6,14 +6,14 @@ Examples
 
 {% for ds in ds_list %}
 
-.. collapse:: Dataset {{ ds|upper }} structure
+.. collapse:: Dataset **{{ ds|upper }}** structure
 
    .. literalinclude:: examples/{{ ds }}.json
        :language: json
 
 .. csv-table::
    :file: examples/{{ ds }}.csv
-   :header-rows: 2
+   :header-rows: 1
 {% endfor %}
 
 {% for example in ex_list %}
@@ -22,12 +22,12 @@ Example {{ example.i }}
 ^^^^^^^^^
 .. literalinclude:: examples/{{ example.name }}.vtl
 
-.. collapse:: Result {{ example.name|upper }} structure
+.. collapse:: Result **{{ example.name|upper }}** structure
 
    .. literalinclude:: examples/{{ example.name }}.json
        :language: json
 
 .. csv-table::
    :file: examples/{{ example.name }}.csv
-   :header-rows: 2
+   :header-rows: 1
 {% endfor %}
