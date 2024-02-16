@@ -6,7 +6,7 @@ Examples
 
 {% for ds in ds_list %}
 
-.. |collapse{{ ds | name_norm }}| collapse:: structure
+.. |collapse{{ ds | name_norm }}| replace:: collapse:: structure
    
    .. literalinclude:: examples/{{ ds }}.json
        :language: json
@@ -24,7 +24,7 @@ Example {{ example.i }}
 ^^^^^^^^^
 .. literalinclude:: examples/{{ example.name }}.vtl
 
-.. |collapse{{ example.name | name_norm }}| collapse:: structure
+.. |collapse{{ example.name | name_norm }}| replace:: collapse:: structure
    
    .. literalinclude:: examples/{{ example.name }}.json
        :language: json
