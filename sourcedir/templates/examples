@@ -6,12 +6,12 @@ Examples
 
 {% for ds in ds_list %}
 
-.. |collapse{{ ds | regex_replace ("[^A-Za-z0-9]","") }}| collapse:: structure
+.. |collapse{{ ds | name_norm }}| collapse:: structure
    
    .. literalinclude:: examples/{{ ds }}.json
        :language: json
 
-Input **{{ ds | upper }}** \[ |collapse{{ ds | regex_replace ("[^A-Za-z0-9]","") }}| \]
+Input **{{ ds | upper }}** \[ |collapse{{ ds | name_norm }}| \]
 
 .. csv-table::
    :file: examples/{{ ds }}.csv
@@ -24,12 +24,12 @@ Example {{ example.i }}
 ^^^^^^^^^
 .. literalinclude:: examples/{{ example.name }}.vtl
 
-.. |collapse{{ example.name | regex_replace ("[^A-Za-z0-9]","") }}| collapse:: structure
+.. |collapse{{ example.name | name_norm }}| collapse:: structure
    
    .. literalinclude:: examples/{{ example.name }}.json
        :language: json
 
-Result **{{ example.name | upper }}** \[ |collapse{{ example.name | regex_replace ("[^A-Za-z0-9]","") }}| \]
+Result **{{ example.name | upper }}** \[ |collapse{{ example.name | name_norm }}| \]
 
 .. csv-table::
    :file: examples/{{ example.name }}.csv
