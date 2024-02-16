@@ -31,7 +31,7 @@ html_context = {
 
 # Load templates
 jinjaEnv = Environment(loader = FileSystemLoader(searchpath="templates"))
-jinjaEnv.filters = { 'name_norm': name_norm }
+jinjaEnv.filters['name_norm'] = name_norm
 templates = {}
 for template in next(os.walk("templates"))[2]:
     templates[template] = jinjaEnv.get_template(template)
