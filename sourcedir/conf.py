@@ -8,7 +8,7 @@ extensions = [
     "sphinxcontrib.mermaid",
     "sphinxcontrib.plantuml",
     "rst2pdf.pdfbuilder",
-    "sphinx_collapse"
+    "sphinx_toolbox.collapse"
 ]
 pdf_documents = [
     ("index", "rst2pdf", "Sample rst2pdf doc", "Your Name"),
