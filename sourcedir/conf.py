@@ -45,14 +45,20 @@ for op_folder in next(os.walk("operators"))[1]:
 
     # Write the op examples
     examples_folder = op_path.joinpath("examples")
+    
     ds_list = sorted(x.with_suffix('').name for x in examples_folder.glob("ds_*.csv"))
+    inputs = []
+    for i in range(len(ds_list)):
+        inputs.append({ "folder": op_folder, "i": i + 1, "name": ds_list[i] })
+    
     ex_list = sorted(x.with_suffix('').name for x in examples_folder.glob("ex_*.vtl"))
     examples = []
     for i in range(len(ex_list)):
-        examples.append({ "i": i + 1, "name": ex_list[i] })
+        examples.append({ "folder": op_folder, "i": i + 1, "name": ex_list[i] })
+    
     with open(op_path.joinpath("examples.rst"), "w") as f:
         f.write(
-            templates["examples"].render({"ex_list": examples, "ds_list": ds_list})
+            templates["examples"].render({"examples": examples, "inputs": inputs})
         )
 
 plantuml = "java -jar " + os.getenv("PUML_PATH", "/tmp/plantuml-mit-1.2023.13.jar")
