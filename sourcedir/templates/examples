@@ -6,10 +6,12 @@ Examples
 
 {% for ds in ds_list %}
 
-.. collapse:: Dataset **{{ ds|upper }}** structure
+.. |collapse{{ ds }}| collapse:: structure
 
    .. literalinclude:: examples/{{ ds }}.json
        :language: json
+
+Input **{{ ds|upper }}** \[ |collapse{{ ds }}| \]
 
 .. csv-table::
    :file: examples/{{ ds }}.csv
@@ -22,10 +24,12 @@ Example {{ example.i }}
 ^^^^^^^^^
 .. literalinclude:: examples/{{ example.name }}.vtl
 
-.. collapse:: Result **{{ example.name|upper }}** structure
+.. |collapse{{ example.name }}| collapse:: structure
 
    .. literalinclude:: examples/{{ example.name }}.json
        :language: json
+
+Result **{{ example.name|upper }}** \[ |collapse{{ ds }}| \]
 
 .. csv-table::
    :file: examples/{{ example.name }}.csv
