@@ -1,4 +1,4 @@
-Id_1 (Integer),Id_2 (String),Me_1 (Integer),Me_2 (Number)
+Id_1,Id_2,Me_1,Me_2
 10,A,5,5.0
 10,B,2,10.5
 11,A,3,12.2
