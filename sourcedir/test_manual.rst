@@ -104,30 +104,7 @@ Variable and Value Domain model diagram (with PlantUML and packages)
 
 .. uml::
 
-  @startuml  
-  class Value
-  class RepresentedVariable 
-
-  package domain { 
-    class ValueDomain
-    class DescribedValueDomain 
-    class EnumeratedValueDomain 
-    class CodeItem 
-    class CodeList
-  } 
-  package set { 
-    class DescribedSet 
-    class EnumeratedSet 
-    class ValueDomainSubset
-    class SetItem 
-    class SetList
-  }     
-  package items {       
-    class DataSet 
-    class DataStructure 
-    class DataSetComponent
-    class DataStructureComponent
-  }         
+  @startuml      
   DescribedValueDomain --|> ValueDomain
   EnumeratedValueDomain --|>  ValueDomain
   CodeList "1..1" -- "1..1" EnumeratedValueDomain
@@ -148,6 +125,28 @@ Variable and Value Domain model diagram (with PlantUML and packages)
   DataSetComponent "0..N" -- "1..1" DataStructureComponent
   ValueDomainSubset "1..1" -- "0..N" DataSetComponent
   RepresentedVariable "1..1" -- "0..N" DataStructureComponent
+  class Value
+  class RepresentedVariable 
+  package domain { 
+  class ValueDomain
+  class DescribedValueDomain 
+  class EnumeratedValueDomain 
+  class CodeItem 
+  class CodeList
+  } 
+  package set { 
+  class DescribedSet 
+  class EnumeratedSet 
+  class ValueDomainSubset
+  class SetItem 
+  class SetList
+  }     
+  package items {       
+  class DataSet 
+  class DataStructure 
+  class DataSetComponent
+  class DataStructureComponent
+  }     
   @enduml
 
 --------------------------------------------------------
