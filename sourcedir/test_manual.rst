@@ -104,8 +104,7 @@ Variable and Value Domain model diagram (with PlantUML and packages)
 
 .. uml::
 
-  @startuml
-  
+  @startuml  
   class Value
   class RepresentedVariable 
 
