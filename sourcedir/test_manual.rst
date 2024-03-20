@@ -99,6 +99,59 @@ Variable and Value Domain model diagram (with PlantUML)
     @enduml
 
 --------------------------------------------------------
+Variable and Value Domain model diagram (with PlantUML and packages)
+--------------------------------------------------------
+
+.. uml::
+
+  @startuml
+  
+  class Value
+  class RepresentedVariable 
+
+  package domain { 
+    class ValueDomain
+    class DescribedValueDomain 
+    class EnumeratedValueDomain 
+    class CodeItem 
+    class CodeList
+  } 
+  package set { 
+    class DescribedSet 
+    class EnumeratedSet 
+    class ValueDomainSubset
+    class SetItem 
+    class SetList
+  }     
+  package items {       
+    class DataSet 
+    class DataStructure 
+    class DataSetComponent
+    class DataStructureComponent
+  }         
+  DescribedValueDomain --|> ValueDomain
+  EnumeratedValueDomain --|>  ValueDomain
+  CodeList "1..1" -- "1..1" EnumeratedValueDomain
+  Value "1..N" -- "1..1" DescribedValueDomain
+  CodeItem "1..N" --* "1..1" CodeList
+  CodeItem --|> Value
+  DataSetComponent "1..N" -- * DataSet
+  DataStructure *-- "1..N" DataStructureComponent
+  DataStructure "1..1" -- "0..N" DataSet
+  SetItem "1..N" --* "1..1" SetList
+  SetList "1..1" -- "1..1" EnumeratedSet
+  SetItem "0..N" -- "1..1" Value
+  EnumeratedSet --|> ValueDomainSubset
+  DescribedSet --|> ValueDomainSubset
+  Value "1..N" -- "1..1" DescribedSet
+  ValueDomain "1..1" -- "0..N" ValueDomainSubset
+  ValueDomain "1..1" -- "0..N" RepresentedVariable
+  DataSetComponent "0..N" -- "1..1" DataStructureComponent
+  ValueDomainSubset "1..1" -- "0..N" DataSetComponent
+  RepresentedVariable "1..1" -- "0..N" DataStructureComponent
+  @enduml
+
+--------------------------------------------------------
 Variable and Value Domain model diagram (with draw.io)
 --------------------------------------------------------
 
