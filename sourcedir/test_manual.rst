@@ -105,8 +105,7 @@ Variable and Value Domain model diagram (with PlantUML and packages)
 .. uml::
 
   @startuml      
-  SetItem "1..N" --* "1..1" SetList
-            class Value
+  class Value
             class RepresentedVariable 
             package domain { 
             class ValueDomain
@@ -129,7 +128,7 @@ Variable and Value Domain model diagram (with PlantUML and packages)
             class DataStructureComponent
             }
             SetList "1..1" -- "1..1" EnumeratedSet
-
+            SetItem "1..N" --* "1..1" SetList
             CodeItem --|> Value
             CodeItem "1..N" --* "1..1" CodeList
             CodeList "1..1" -- "1..1" EnumeratedValueDomain
