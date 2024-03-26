@@ -71,31 +71,34 @@ Variable and Value Domain model diagram (with PlantUML)
 .. uml::
 
     @startuml
-    SetItem "0..N" -- "1..1" Value
-            SetItem "1..N" --* "1..1" SetList
-            SetList "1..1" -- "1..1" EnumeratedSet
+            skinparam SameClassWidth true
+            skinparam linetype ortho
+
+            SetItem "0..N" -u- "1..1" Value
+            SetItem "1..N" -u-* "1..1" SetList
+            SetList "1..1" -u- "1..1" EnumeratedSet
     
-            CodeItem --|> Value
-            CodeItem "1..N" --* "1..1" CodeList
-            CodeList "1..1" -- "1..1" EnumeratedValueDomain
+            CodeItem -u-|> Value
+            CodeItem "1..N" -u-* "1..1" CodeList
+            CodeList "1..1" -u- "1..1" EnumeratedValueDomain
     
-            Value "1..N" -- "1..1" DescribedValueDomain
-            Value "1..N" -- "1..1" DescribedSet
+            Value "1..N" -u- "1..1" DescribedValueDomain
+            Value "1..N" -u- "1..1" DescribedSet
     
-            DescribedValueDomain --|> ValueDomain
-            EnumeratedValueDomain --|>  ValueDomain
+            DescribedValueDomain -u-|> ValueDomain
+            EnumeratedValueDomain -u-|>  ValueDomain
     
-            EnumeratedSet --|> ValueDomainSubset
-            DescribedSet --|> ValueDomainSubset
-            ValueDomain "1..1" -- "0..N" ValueDomainSubset
-            ValueDomain "1..1" -- "0..N" RepresentedVariable
+            EnumeratedSet -u-|> ValueDomainSubset
+            DescribedSet -u-|> ValueDomainSubset
+            ValueDomain "1..1" -r- "0..N" ValueDomainSubset
+            ValueDomain "1..1" -u- "0..N" RepresentedVariable
     
-            DataStructure "1..1" -- "0..N" DataSet
+            DataStructure "1..1" -r- "0..N" DataSet
             DataStructure *-- "1..N" DataStructureComponent
-            DataSet *-- "1..N" DataSetComponent
-            DataSetComponent "0..N" -- "1..1" DataStructureComponent
-            ValueDomainSubset "1..1" -- "0..N" DataSetComponent
-            RepresentedVariable "1..1" -- "0..N" DataStructureComponent
+            DataSet *-d- "1..N" DataSetComponent
+            DataSetComponent "0..N" -l- "1..1" DataStructureComponent
+            ValueDomainSubset "1..1" -u- "0..N" DataSetComponent
+            RepresentedVariable "1..1" -r- "0..N" DataStructureComponent
     @enduml
 
 --------------------------------------------------------
